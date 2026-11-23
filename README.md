@@ -73,3 +73,7 @@ Vercel, connected to this repo (preview per PR, production on merge to `main`). 
 `main` is protected: all changes go through PRs with green CI. See [docs/adr/0006-ci-autofix.md](docs/adr/0006-ci-autofix.md) for the automated triage/fix bot.
 
 Security issues: see [SECURITY.md](SECURITY.md).
+
+## Licence
+
+[MIT](LICENSE)

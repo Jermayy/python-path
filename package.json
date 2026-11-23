@@ -57,5 +57,6 @@
   "description": "Python Path — zero to Forward Deployed / AI Orchestration Engineer, in the browser.",
   "engines": {
     "node": ">=24 <25"
-  }
+  },
+  "license": "MIT"
 }
