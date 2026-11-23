@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { LessonContent } from "@/components/lesson/LessonContent";
+import { RichText } from "@/components/RichText";
 import { ExerciseList } from "@/components/exercise/ExerciseList";
 import { trackColor } from "@/components/trackStyle";
 import {
@@ -28,7 +29,7 @@ export async function generateMetadata(
   return ref
     ? {
         title: `${ref.lesson.title} — ${ref.module.title}`,
-        description: ref.lesson.summary,
+        description: ref.lesson.summary.replaceAll("`", ""),
       }
     : {};
 }
@@ -62,7 +63,9 @@ export default async function LessonPage(
         </p>
         <h1 className="mt-1 text-3xl font-bold">{lesson.title}</h1>
         <p className="text-muted mt-2 flex items-center gap-3">
-          <span>{lesson.summary}</span>
+          <span>
+            <RichText text={lesson.summary} />
+          </span>
           <span className="inline-flex shrink-0 items-center gap-1 text-xs">
             <Clock aria-hidden="true" className="h-3.5 w-3.5" /> ~
             {lesson.minutes} min

@@ -28,3 +28,14 @@ test("roadmap shows every track", async ({ page }) => {
     ).toBeVisible();
   }
 });
+
+test("lesson summaries render inline code instead of raw backticks", async ({
+  page,
+}) => {
+  await page.goto("/learn/python-basics/variables-and-types");
+  const header = page.locator("header", {
+    has: page.getByRole("heading", { level: 1 }),
+  });
+  await expect(header.locator("code", { hasText: "var" })).toBeVisible();
+  await expect(header).not.toContainText("`");
+});
