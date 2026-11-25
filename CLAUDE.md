@@ -27,6 +27,7 @@ npm run test:e2e       # Playwright; run `npm run build` first
 npm run lint && npm run format:check
 npm run typecheck
 npm run check          # everything CI runs except e2e
+npm run screenshots    # regenerate README images (after npm run build)
 ```
 
 Migrations: `supabase/migrations/*.sql` (apply via Supabase CLI or dashboard).
